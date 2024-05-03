@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>hrm</title>
+    <style>
+      
+        table{
+            text-align: center;
+            width: 100%;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">HRM</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+           
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+           <h5>Welcome Admin</h5>
+          
+
+          </form>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-md-2">
+            
+           <a class="nav-link" href="#" role="button">Home</a>
+            <a class="nav-link" href="#" role="button">Profile</a>
+            <a class="nav-link" href="/register" role="button">Add Employee</a>
+            <a class="nav-link" href="/" role="button">Logout</a>
+
+
+
+        </div> 
+        <div class="col-md-10">
+            <h1 class="text-center">Employee Records</h1>
+<% if(student!="") {%>
+    <div class="container">
+    <table border="1" >
+        <tr>
+                         <th>Id</th>
+                          <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Gender</th>
+                            <th>Action</th>
+
+
+        </tr>
+      <% students.forEach((students,index)=>
+      {%>
+        <tr>
+            <td><%= index+1 %></td>
+            <td><%= students.name %></td>
+            <td><%= students.mail %></td>
+            <td><%= students.phone %></td>
+            <td><%= students.address %></td>
+            <td><%= students.department %></td>
+            <td><%= students.salary %></td>
+            <td><%= students.gender %></td>
+            
+            <td><a href='/edit/<%= students._id %>'>Update</a> | <a href='/delete/<%= students._id %>'>Delete</a></td>
+
+        </tr><% }) %>
+    
+    </table>
+  <% } %>
+
+
+  
+</div>
+</div>
+</div>
+</body>
+</html>

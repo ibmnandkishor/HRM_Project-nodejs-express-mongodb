@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-color: black;
+    }
+    .container {
+      margin-top: 3%;
+      width: 30%;
+      background-color: white;
+      color: black;
+
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Edit form</h2>
+  <form method="post" action="/edit/<%= students._id %>" >
+    <div class="form-group">
+      <label >Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Name" name="name" value="<%= students.name %>">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Mail</label>
+        <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Email" name="mail" value="<%= students.mail %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Phone</label>
+        <input type="number" class="form-control" id="exampleInputEmail1"  placeholder="Phone" name="phone"   value="<%= students.phone %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Address</label>
+        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Address" name="address"  value="<%= students.address %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Department</label>
+        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Department" name="department"  value="<%= students.department %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Salary</label>
+        <input type="number" class="form-control" id="exampleInputEmail1"  placeholder="Salary" name="salary"  value="<%= students.salary %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Date</label>
+        <input type="date" class="form-control" id="exampleInputEmail1"  placeholder="Date" name="date"  value="<%= students.date %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Gender</label>
+        <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Gender" name="gender"  value="<%= students.gender %>">
+      </div>
+    
+    <button type="submit" class="btn btn-primary">UPDATE</button>&nbsp;&nbsp;
+   <a href="/admin"><button type="button" class="btn btn-primary">Cancel</button></a>
+
+  </form>
+  <a href="/home">home page</a>
+</div>
+
+</body>
+</html>
